@@ -3,3 +3,15 @@ This project requires basic Deep Learning concepts like Convolution Neural Netwo
 
 #### DATA: Flickr 30k
 It contains 30K images and 5 Captions for every image file.
+
+#### Image Feature Extraction: Transfer Learning technique 
+Used VGG as base model for transfer learning and weights as “imagenet” . Removed the last layer from the loaded model, as this is the model used to predict a classification for a photo.
+
+#### Inject Model
+The inject model combines the encoded form of the image with each word from the text description generated so-far.
+The approach uses the recurrent neural network as a text generation model that uses a sequence of both image and word information as input in order to generate the next word in the sequence.
+
+#### Merge Model
+The merge model combines both the encoded form of the image input with the encoded form of the text description generated so far.
+The combination of these two encoded inputs is then used by a very simple decoder model to generate the next word in the sequence.
+The approach uses the recurrent neural network only to encode the text generated so far.
